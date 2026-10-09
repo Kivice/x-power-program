@@ -16,7 +16,7 @@ import {
   Eye,
   Flag,
 } from 'lucide-react';
-import { EmployerProfile, Report, AuditLog } from '@/lib/types';
+import { EmployerProfile, Report, AuditLog, Job } from '@/lib/types';
 
 interface Props {
   stats: {
@@ -31,6 +31,7 @@ interface Props {
   initialEmployers: EmployerProfile[];
   initialReports: Report[];
   initialAuditLogs: AuditLog[];
+  initialJobs: Job[];
 }
 
 export default function AdminClient({
@@ -38,12 +39,38 @@ export default function AdminClient({
   initialEmployers,
   initialReports,
   initialAuditLogs,
+  initialJobs,
 }: Props) {
   const router = useRouter();
-  const [tab, setTab] = useState<'verifications' | 'reports' | 'audit' | 'employers'>('verifications');
+  const [tab, setTab] = useState<'verifications' | 'reports' | 'jobs' | 'audit' | 'employers'>('verifications');
   const [employers, setEmployers] = useState<EmployerProfile[]>(initialEmployers);
   const [reports, setReports] = useState<Report[]>(initialReports);
+  const [jobs, setJobs] = useState<Job[]>(initialJobs);
   const [actionLoading, setActionLoading] = useState<string | null>(null);
+
+  async function handleJobStatusToggle(jobId: string, currentStatus: string) {
+    try {
+      setActionLoading(jobId);
+      const newStatus = currentStatus === 'active' ? 'paused' : 'active';
+      const res = await fetch('/api/admin/jobs', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ jobId, status: newStatus, reason: 'Administrative moderation' }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setJobs((prev) =>
+          prev.map((j) => (j.id === jobId ? { ...j, status: newStatus } : j))
+        );
+      } else {
+        alert(data.error || 'Action failed');
+      }
+    } catch {
+      alert('Error updating job status');
+    } finally {
+      setActionLoading(null);
+    }
+  }
 
   async function handleVerification(employerId: string, status: 'verified' | 'rejected') {
     try {
@@ -185,6 +212,17 @@ export default function AdminClient({
             }`}
           >
             All Registered Companies ({employers.length})
+          </button>
+
+          <button
+            onClick={() => setTab('jobs')}
+            className={`px-4 py-2 rounded-xl transition ${
+              tab === 'jobs'
+                ? 'bg-slate-900 text-white'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+            }`}
+          >
+            Vacancies Moderation ({jobs.length})
           </button>
 
           <button
@@ -375,6 +413,72 @@ export default function AdminClient({
                         >
                           View Profile
                         </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* Tab: Jobs Moderation */}
+        {tab === 'jobs' && (
+          <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+            <h2 className="text-base font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center justify-between">
+              <span>Platform Vacancies & Moderation Controls</span>
+              <span className="text-xs font-normal text-slate-500">{jobs.length} total listings</span>
+            </h2>
+
+            <div className="overflow-x-auto text-xs">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b border-slate-200 text-slate-400 uppercase text-[11px]">
+                    <th className="pb-3">Vacancy Title</th>
+                    <th className="pb-3">Company</th>
+                    <th className="pb-3">Location & Type</th>
+                    <th className="pb-3">Status</th>
+                    <th className="pb-3">Views</th>
+                    <th className="pb-3 text-right">Moderation Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {jobs.map((j) => (
+                    <tr key={j.id} className="hover:bg-slate-50">
+                      <td className="py-3">
+                        <Link href={`/jobs/${j.id}`} className="font-bold text-slate-900 hover:text-cyan-700 block">
+                          {j.title}
+                        </Link>
+                        <span className="text-[11px] text-slate-400">{j.category}</span>
+                      </td>
+                      <td className="py-3 font-semibold text-slate-700">{j.company_name}</td>
+                      <td className="py-3 text-slate-600">{j.location} &bull; {j.workplace_type}</td>
+                      <td className="py-3">
+                        <span
+                          className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                            j.status === 'active'
+                              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                              : j.status === 'paused'
+                              ? 'bg-amber-50 text-amber-700 border border-amber-200'
+                              : 'bg-slate-100 text-slate-600'
+                          }`}
+                        >
+                          {j.status}
+                        </span>
+                      </td>
+                      <td className="py-3 text-slate-600">{j.views_count}</td>
+                      <td className="py-3 text-right space-x-2">
+                        <button
+                          onClick={() => handleJobStatusToggle(j.id, j.status)}
+                          disabled={actionLoading === j.id}
+                          className={`px-3 py-1 rounded-lg font-bold text-xs transition ${
+                            j.status === 'active'
+                              ? 'bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100'
+                              : 'bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100'
+                          }`}
+                        >
+                          {j.status === 'active' ? 'Pause Listing' : 'Reactivate'}
+                        </button>
                       </td>
                     </tr>
                   ))}

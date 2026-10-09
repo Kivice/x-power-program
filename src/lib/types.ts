@@ -108,6 +108,10 @@ export interface Application {
   candidate_headline?: string;
   candidate_skills?: string[];
   candidate_location?: string;
+  interview_scheduled_at?: string;
+  interview_meeting_link?: string;
+  interview_location?: string;
+  interview_notes?: string;
 }
 
 export interface SavedJob {

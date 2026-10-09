@@ -7,12 +7,17 @@ import { MessageSquare, Send, Building2, User, Clock, Check, RefreshCw } from 'l
 interface Props {
   initialConversations: Conversation[];
   currentUser: AuthSession;
+  initialSelectedId?: string;
 }
 
-export default function MessagesClient({ initialConversations, currentUser }: Props) {
+export default function MessagesClient({
+  initialConversations,
+  currentUser,
+  initialSelectedId,
+}: Props) {
   const [conversations, setConversations] = useState<Conversation[]>(initialConversations);
   const [activeConvId, setActiveConvId] = useState<string | null>(
-    initialConversations.length > 0 ? initialConversations[0].id : null
+    initialSelectedId || (initialConversations.length > 0 ? initialConversations[0].id : null)
   );
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState('');

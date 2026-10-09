@@ -347,11 +347,11 @@ export default function ApplicationsReviewClient({
                 </button>
 
                 <Link
-                  href="/dashboard/messages"
+                  href={`/dashboard/messages?seekerId=${selectedApp.job_seeker_id}&jobId=${selectedApp.job_id}`}
                   className="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 font-bold hover:bg-slate-100 transition flex items-center gap-1"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
-                  Message
+                  Message Candidate
                 </Link>
               </div>
             </div>

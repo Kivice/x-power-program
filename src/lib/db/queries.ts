@@ -483,10 +483,15 @@ export function getApplicationsBySeeker(seekerId: string): Application[] {
            j.salary_min,
            j.salary_max,
            ep.company_name,
-           ep.logo_url as company_logo
+           ep.logo_url as company_logo,
+           i.scheduled_at as interview_scheduled_at,
+           i.meeting_link as interview_meeting_link,
+           i.location as interview_location,
+           i.notes as interview_notes
     FROM applications a
     JOIN jobs j ON a.job_id = j.id
     JOIN employer_profiles ep ON j.employer_id = ep.id
+    LEFT JOIN interviews i ON i.application_id = a.id AND i.status = 'scheduled'
     WHERE a.job_seeker_id = ?
     ORDER BY a.created_at DESC
   `;
@@ -504,11 +509,16 @@ export function getApplicationsByEmployer(employerId: string): Application[] {
            jsp.headline as candidate_headline,
            jsp.skills as candidate_skills_json,
            jsp.location as candidate_location,
-           jsp.cv_url as candidate_cv_url
+           jsp.cv_url as candidate_cv_url,
+           i.scheduled_at as interview_scheduled_at,
+           i.meeting_link as interview_meeting_link,
+           i.location as interview_location,
+           i.notes as interview_notes
     FROM applications a
     JOIN jobs j ON a.job_id = j.id
     JOIN job_seeker_profiles jsp ON a.job_seeker_id = jsp.id
     JOIN users u ON jsp.user_id = u.id
+    LEFT JOIN interviews i ON i.application_id = a.id AND i.status = 'scheduled'
     WHERE j.employer_id = ?
     ORDER BY a.created_at DESC
   `;

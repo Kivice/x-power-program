@@ -170,6 +170,35 @@ export default async function ApplicationsTrackerPage() {
                     </div>
                   </div>
 
+                  {/* Interview Invite Banner */}
+                  {app.interview_scheduled_at && (
+                    <div className="my-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div>
+                        <div className="font-bold flex items-center gap-1.5 text-emerald-900">
+                          <Calendar className="w-4 h-4 text-emerald-600" />
+                          Interview Scheduled: {new Date(app.interview_scheduled_at).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })}
+                        </div>
+                        {app.interview_notes && (
+                          <p className="text-emerald-800 text-[11px] mt-1">
+                            Agenda / Notes: {app.interview_notes}
+                          </p>
+                        )}
+                      </div>
+
+                      {app.interview_meeting_link && (
+                        <a
+                          href={app.interview_meeting_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold transition flex items-center justify-center gap-1.5 flex-shrink-0 shadow-xs"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          Join Meeting Call
+                        </a>
+                      )}
+                    </div>
+                  )}
+
                   {/* Notes / Details */}
                   <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
                     <div>

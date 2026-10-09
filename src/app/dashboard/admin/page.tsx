@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { getSession } from '@/lib/auth';
-import { getAdminStats, getAllEmployers, getAllReports, getAuditLogs } from '@/lib/db/queries';
+import { getAdminStats, getAllEmployers, getAllReports, getAuditLogs, getJobs } from '@/lib/db/queries';
 import AdminClient from './AdminClient';
 
 export const dynamic = 'force-dynamic';
@@ -15,6 +15,8 @@ export default async function AdminDashboardPage() {
   const employers = JSON.parse(JSON.stringify(getAllEmployers()));
   const reports = JSON.parse(JSON.stringify(getAllReports()));
   const auditLogs = JSON.parse(JSON.stringify(getAuditLogs()));
+  const { jobs } = getJobs({ limit: 100 });
+  const serializedJobs = JSON.parse(JSON.stringify(jobs));
 
   return (
     <AdminClient
@@ -22,6 +24,7 @@ export default async function AdminDashboardPage() {
       initialEmployers={employers}
       initialReports={reports}
       initialAuditLogs={auditLogs}
+      initialJobs={serializedJobs}
     />
   );
 }
