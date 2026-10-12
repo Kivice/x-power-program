@@ -3,6 +3,12 @@ import { cookies } from 'next/headers';
 import bcrypt from 'bcryptjs';
 import { AuthSession, UserRole } from '../types';
 
+if (process.env.NODE_ENV === 'production' && !process.env.SESSION_SECRET) {
+  console.warn(
+    '⚠️ [SECURITY WARNING] SESSION_SECRET is not set in production! Please define a strong random SESSION_SECRET in your environment.'
+  );
+}
+
 const SECRET_KEY = new TextEncoder().encode(
   process.env.SESSION_SECRET || 'x-power-program-secure-jwt-secret-key-east-africa-2026'
 );

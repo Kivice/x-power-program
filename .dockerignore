@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+.gitignore
+data/*.db*
+public/uploads/*
+!public/uploads/.gitkeep
+.env*.local
+*.log

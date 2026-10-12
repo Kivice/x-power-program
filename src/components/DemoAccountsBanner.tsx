@@ -9,6 +9,7 @@ export default function DemoAccountsBanner() {
   const [dismissed, setDismissed] = useState(false);
   const router = useRouter();
 
+  if (process.env.NEXT_PUBLIC_ENABLE_DEMO_SANDBOX === 'false') return null;
   if (dismissed) return null;
 
   async function handleDemoLogin(role: string) {

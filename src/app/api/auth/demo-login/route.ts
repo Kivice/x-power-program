@@ -4,6 +4,16 @@ import { setSessionCookie } from '@/lib/auth';
 
 export async function POST(req: Request) {
   try {
+    if (
+      process.env.NEXT_PUBLIC_ENABLE_DEMO_SANDBOX === 'false' ||
+      process.env.ENABLE_DEMO_SANDBOX === 'false'
+    ) {
+      return NextResponse.json(
+        { error: 'Demo sandbox is disabled in this environment' },
+        { status: 403 }
+      );
+    }
+
     const { role } = await req.json();
     let email = 'admin@xpower.co.ke';
 

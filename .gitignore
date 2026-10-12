@@ -42,4 +42,6 @@ next-env.d.ts
 # local sqlite data
 /data/*.db*
 /public/uploads/*
+!public/uploads/.gitkeep
 !.env.example
+!.env.production.example
