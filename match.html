@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill-Match Diagnostics Lab | X Power Program Template</title>
+  <meta name="description" content="Test real-time 100-point compatibility scoring between candidates and employers based on verified skills, Kenya county proximity, and technical portfolio depth.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Client Preview Template Bar & Role Switcher -->
+  <div class="client-demo-bar">
+    <div class="container client-demo-content">
+      <div class="client-demo-badge">
+        <span class="pulse-dot"></span>
+        <span><strong>Client Showcase Template</strong> · Algorithm Diagnostics Lab</span>
+      </div>
+
+      <!-- Role Sandbox Switcher -->
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-size: 0.75rem; opacity: 0.85;">Perspective:</span>
+        <div class="role-sandbox-pills">
+          <button class="role-pill-btn active" data-role="seeker">👤 Job Seeker</button>
+          <button class="role-pill-btn" data-role="employer">🏢 Employer</button>
+          <button class="role-pill-btn" data-role="admin">🛡️ Compliance</button>
+        </div>
+      </div>
+
+      <!-- Multi-Theme Switcher -->
+      <div class="client-theme-switcher">
+        <span style="font-size: 0.75rem; opacity: 0.85;">Theme:</span>
+        <button class="theme-swatch active" data-theme="blue" title="Silicon Savannah Blue" style="background:#0284c7;"></button>
+        <button class="theme-swatch" data-theme="emerald" title="AgriTech Emerald" style="background:#059669;"></button>
+        <button class="theme-swatch" data-theme="indigo" title="FinTech Indigo" style="background:#4f46e5;"></button>
+        <button class="theme-swatch" data-theme="coral" title="Startup Sunset Coral" style="background:#ea580c;"></button>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <a href="#match-lab" style="color: #38bdf8; font-weight: 700; font-size: 0.8125rem;">⚡ Interactive Engine ➔</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">XP</div>
+        <div class="brand-text">
+          <span class="brand-name">X Power Program</span>
+          <span class="brand-sub">Kenya Employment Platform</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="employers.html" class="nav-link">Verified Employers</a></li>
+          <li><a href="match.html" class="nav-link active">Skill Diagnostics</a></li>
+          <li><a href="contact.html" class="nav-link">Deploy for Your Agency</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary">Deploy Platform</a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; background: var(--bg-surface); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div style="max-width: 820px;">
+          <div class="badge badge-primary" style="margin-bottom: 1rem;">
+            <span>⚡</span> Transparent Scoring · No Black-Box Resume Filtering
+          </div>
+          <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.75rem; letter-spacing: -0.02em;">
+            100-Point Skill-Match Diagnostics Lab
+          </h1>
+          <p style="font-size: 1.125rem; color: var(--text-muted); line-height: 1.6;">
+            Traditional ATS software discards qualified African talent through rigid keyword parsing. X Power implements a transparent three-dimensional scoring engine that quantifies skill depth, county commute viability, and practical project track records.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagnostics Laboratory Card -->
+    <section class="section" id="match-lab">
+      <div class="container">
+        <div class="match-lab-card">
+          <div class="match-lab-header">
+            <div>
+              <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Interactive Algorithm Sandbox</div>
+              <h2 style="font-size: 1.65rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.35rem;">
+                Target Benchmark: Safaricom FinTech Engineer
+              </h2>
+              <p style="font-size: 0.875rem; color: var(--text-muted);">
+                Benchmark role requirements: <strong>TypeScript, Next.js, M-Pesa Daraja API, SQL, AWS</strong>. Click skills below to observe real-time score recalibration.
+              </p>
+            </div>
+            <div style="text-align: right;">
+              <span class="badge badge-neutral">Client Evaluation Mode</span>
+            </div>
+          </div>
+
+          <div class="match-lab-body">
+            <!-- Left Column: Interactive Skills Selector -->
+            <div>
+              <h3 style="font-size: 1rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                Candidate Skill Profile
+              </h3>
+              <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Toggle skills on or off to simulate different applicant competency levels:
+              </p>
+
+              <div class="skill-chips-grid">
+                <button class="skill-chip selected" data-skill="typescript">TypeScript (Core)</button>
+                <button class="skill-chip selected" data-skill="nextjs">Next.js (Core)</button>
+                <button class="skill-chip selected" data-skill="mpesa">M-Pesa Daraja API</button>
+                <button class="skill-chip selected" data-skill="sql">SQL / Postgres</button>
+                <button class="skill-chip selected" data-skill="aws">AWS Cloud</button>
+                <button class="skill-chip" data-skill="python">Python</button>
+                <button class="skill-chip" data-skill="docker">Docker &amp; K8s</button>
+                <button class="skill-chip" data-skill="react-native">React Native</button>
+                <button class="skill-chip" data-skill="lorawan">LoRaWAN IoT</button>
+                <button class="skill-chip" data-skill="devops">CI/CD GitHub Actions</button>
+              </div>
+
+              <div style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                <div style="font-size: 0.8125rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem;">
+                  Simulated Candidate Identity:
+                </div>
+                <div style="font-size: 0.875rem; color: var(--text-body);">
+                  <strong>Amina Mwangi</strong> · Full-Stack Systems Specialist<br>
+                  <span style="color: var(--text-muted); font-size: 0.8125rem;">Nairobi County (Westlands commute radius) · 4.5 Years Applied Experience</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Live Meter & Breakdown -->
+            <div>
+              <div class="diagnostic-meter-card">
+                <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700;">
+                  Composite Match Score
+                </div>
+
+                <div class="diagnostic-score-container">
+                  <div class="diagnostic-score-number" id="diagnosticScore">99</div>
+                  <div class="diagnostic-score-max">/ 100</div>
+                </div>
+
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" id="diagnosticMeterFill" style="width: 99%;"></div>
+                </div>
+
+                <div id="diagnosticCategory" style="font-size: 0.95rem; font-weight: 800; color: #10b981; margin-bottom: 1.5rem;">
+                  ★ Excellent Match (Top 5% Candidate)
+                </div>
+
+                <div class="breakdown-list">
+                  <div class="breakdown-item">
+                    <span>Technical Competencies (50 pts max)</span>
+                    <strong id="breakdownSkills">50 / 50 pts</strong>
+                  </div>
+                  <div class="breakdown-item">
+                    <span>Nairobi Hub Viability (25 pts max)</span>
+                    <strong>25 / 25 pts</strong>
+                  </div>
+                  <div class="breakdown-item">
+                    <span>Track Record &amp; Seniority (25 pts max)</span>
+                    <strong>24 / 25 pts</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mathematical Formula & Architecture Breakdown -->
+    <section class="section section-alt">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem;">
+            Why the 100-Point Scoring Model Works
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1rem;">
+            A deterministic, auditable alternative to opaque black-box resume filters.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem;">
+          
+          <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">1️⃣</div>
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem;">
+              50 Pts: Hard Skill Vector Alignment
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+              Weighted evaluation of the job's prerequisite technologies. A candidate must demonstrate practical proficiency in high-demand frameworks rather than superficial resume buzzwords.
+            </p>
+          </div>
+
+          <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">2️⃣</div>
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem;">
+              25 Pts: Regional Commute &amp; County Viability
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+              Calculates practical proximity to workplace clusters (Nairobi CBD, Westlands, Upper Hill, Mombasa Port, or Remote). Prevents employer attrition caused by unsustainable cross-county commutes.
+            </p>
+          </div>
+
+          <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">3️⃣</div>
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem;">
+              25 Pts: Practical Execution &amp; Seniority
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+              Rewards shipping production projects, verified GitHub contributions, and BRS-certified employment tenure. Eliminates credential inflation from unverified certificates.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Deployment CTA -->
+    <section class="section">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #0b1324 0%, #17243e 100%); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-lg); padding: 3rem; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+          <div style="max-width: 650px;">
+            <div class="badge badge-primary" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; margin-bottom: 0.75rem;">
+              Algorithm Licensing &amp; Integration
+            </div>
+            <h3 style="font-size: 1.75rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">
+              Integrate This Diagnostics Engine into Your Existing Portal
+            </h3>
+            <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.6;">
+              Available as a drop-in JavaScript/TypeScript SDK, REST API microservice, or complete white-label employment portal.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20would%20like%20to%20license%20or%20deploy%20the%20X%20Power%20Skill-Match%20algorithm." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #0284c7; padding: 0.85rem 1.65rem;">
+              💬 WhatsApp Developer (+254 708 746 611)
+            </a>
+            <a href="contact.html" class="btn btn-secondary" style="padding: 0.85rem 1.65rem;">
+              Platform Licensing Details ➔
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">XP</div>
+            <div class="brand-text">
+              <span class="brand-name">X Power Program</span>
+              <span class="brand-sub">Kenya Employment Platform</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A turnkey, client-ready employment and talent matching platform template engineered for workforce initiatives and staffing agencies across Kenya and East Africa.
+          </p>
+          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+            <strong>Developer Contact:</strong> +254 708 746 611<br>
+            <strong>Engineering:</strong> philipmaina637@gmail.com
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="jobs.html" class="footer-link">Find Jobs</a></li>
+            <li><a href="employers.html" class="footer-link">Verified Employers</a></li>
+            <li><a href="match.html" class="footer-link">Skill Diagnostics</a></li>
+            <li><a href="contact.html" class="footer-link">Deploy for Your Agency</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Kenyan Hubs</div>
+          <ul class="footer-links">
+            <li><a href="jobs.html" class="footer-link">Nairobi Tech &amp; FinTech</a></li>
+            <li><a href="jobs.html" class="footer-link">Mombasa Maritime &amp; BI</a></li>
+            <li><a href="jobs.html" class="footer-link">Kisumu AgriTech &amp; Trade</a></li>
+            <li><a href="jobs.html" class="footer-link">Nakuru &amp; Eldoret Innovation</a></li>
+            <li><a href="jobs.html" class="footer-link">Remote East Africa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Compliance &amp; Trust</div>
+          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+            Full statutory alignment with the <strong>Kenya Data Protection Act, 2019</strong>. Strict anti-placement-fee safeguards.
+          </p>
+          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+            Zero-Bloat Architecture
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 X Power Program Kenya. Client Showcase Template.</div>
+        <div class="footer-author">
+          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="components.js"></script>
+</body>
+</html>

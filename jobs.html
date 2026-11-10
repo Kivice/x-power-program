@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenya Multi-County Vacancies | X Power Program Template</title>
+  <meta name="description" content="Explore verified tech, finance, and engineering vacancies across Nairobi, Mombasa, Kisumu, and Remote Kenya with transparent skill compatibility scoring.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Client Preview Template Bar & Role Switcher -->
+  <div class="client-demo-bar">
+    <div class="container client-demo-content">
+      <div class="client-demo-badge">
+        <span class="pulse-dot"></span>
+        <span><strong>Client Showcase Template</strong> · Multi-County Job Directory</span>
+      </div>
+
+      <!-- Role Sandbox Switcher -->
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-size: 0.75rem; opacity: 0.85;">Perspective:</span>
+        <div class="role-sandbox-pills">
+          <button class="role-pill-btn active" data-role="seeker">👤 Job Seeker</button>
+          <button class="role-pill-btn" data-role="employer">🏢 Employer</button>
+          <button class="role-pill-btn" data-role="admin">🛡️ Compliance</button>
+        </div>
+      </div>
+
+      <!-- Multi-Theme Switcher -->
+      <div class="client-theme-switcher">
+        <span style="font-size: 0.75rem; opacity: 0.85;">Theme:</span>
+        <button class="theme-swatch active" data-theme="blue" title="Silicon Savannah Blue" style="background:#0284c7;"></button>
+        <button class="theme-swatch" data-theme="emerald" title="AgriTech Emerald" style="background:#059669;"></button>
+        <button class="theme-swatch" data-theme="indigo" title="FinTech Indigo" style="background:#4f46e5;"></button>
+        <button class="theme-swatch" data-theme="coral" title="Startup Sunset Coral" style="background:#ea580c;"></button>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <a href="match.html" style="color: #38bdf8; font-weight: 700; font-size: 0.8125rem;">⚡ Test Match Lab ➔</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">XP</div>
+        <div class="brand-text">
+          <span class="brand-name">X Power Program</span>
+          <span class="brand-sub">Kenya Employment Platform</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="jobs.html" class="nav-link active">Find Jobs</a></li>
+          <li><a href="employers.html" class="nav-link">Verified Employers</a></li>
+          <li><a href="match.html" class="nav-link">Skill Diagnostics</a></li>
+          <li><a href="contact.html" class="nav-link">Deploy for Your Agency</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="match.html" class="btn btn-primary">Try Match Engine</a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; background: var(--bg-surface); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div style="max-width: 780px;">
+          <div class="badge badge-primary" style="margin-bottom: 1rem;">
+            <span>🇰🇪</span> 47-County Talent Distribution · Verified BRS Employers
+          </div>
+          <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.75rem; letter-spacing: -0.02em;">
+            Kenya Employment &amp; Vacancy Directory
+          </h1>
+          <p style="font-size: 1.125rem; color: var(--text-muted); line-height: 1.6;">
+            Discover high-impact opportunities with transparent compensation in Kenya Shillings (KES), clear skill-fit scoring, and direct application simulation.
+          </p>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div style="margin-top: 2rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; box-shadow: var(--shadow-sm);">
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+            <input 
+              type="text" 
+              id="jobSearchInput" 
+              placeholder="Search by role, skill (e.g. Next.js, M-Pesa, AWS), or employer..."
+              style="width: 100%; padding: 0.85rem 1.25rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; background: var(--bg-surface); color: var(--text-body);"
+            >
+            <div style="font-size: 0.8125rem; color: var(--text-muted); white-space: nowrap;">
+              <span>Showing <strong>6 Featured Positions</strong></span>
+            </div>
+          </div>
+
+          <!-- County Filter Pills -->
+          <div class="job-filter-tabs">
+            <button class="job-filter-tab active" data-county="all">All Kenya (6)</button>
+            <button class="job-filter-tab" data-county="nairobi">Nairobi County (3)</button>
+            <button class="job-filter-tab" data-county="mombasa">Mombasa County (1)</button>
+            <button class="job-filter-tab" data-county="kisumu">Kisumu &amp; Rift (1)</button>
+            <button class="job-filter-tab" data-county="remote">Remote East Africa (1)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jobs Directory Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="jobs-grid">
+
+          <!-- Job Card 1: Safaricom -->
+          <div class="job-card" data-county="nairobi">
+            <div class="job-card-header">
+              <div class="company-logo">SAF</div>
+              <div style="flex: 1;">
+                <h3 class="job-title">Senior FinTech Platform Engineer</h3>
+                <div class="job-company">
+                  <span>Safaricom PLC</span>
+                  <span class="verified-tag">✓ Verified BRS</span>
+                </div>
+              </div>
+              <div class="job-match-badge match-high">94% Match</div>
+            </div>
+
+            <p class="job-snippet">
+              Architect scalable M-Pesa integration pipelines, high-throughput microservices, and modern merchant settlement portals. 
+            </p>
+
+            <div class="job-tags">
+              <span class="job-tag">TypeScript</span>
+              <span class="job-tag">Next.js</span>
+              <span class="job-tag">M-Pesa Daraja</span>
+              <span class="job-tag">PostgreSQL</span>
+              <span class="job-tag">AWS</span>
+            </div>
+
+            <div class="job-meta-row">
+              <div class="job-meta-item">
+                <span class="job-meta-label">Location:</span>
+                <span class="job-meta-value">Westlands, Nairobi</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Monthly Gross:</span>
+                <span class="job-meta-value">KES 320,000 – 450,000</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Contract:</span>
+                <span class="job-meta-value">Full-time · Permanent</span>
+              </div>
+            </div>
+
+            <div class="job-card-footer">
+              <span style="font-size: 0.8125rem; color: var(--text-muted);">Posted 2 days ago · 14 Applicants</span>
+              <button 
+                class="btn btn-primary quick-apply-btn" 
+                data-job="Senior FinTech Platform Engineer" 
+                data-company="Safaricom PLC"
+                data-score="94%"
+              >
+                1-Click Apply ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Job Card 2: Twiga Foods -->
+          <div class="job-card" data-county="nairobi">
+            <div class="job-card-header">
+              <div class="company-logo" style="background: #10b981;">TWG</div>
+              <div style="flex: 1;">
+                <h3 class="job-title">Full-Stack Logistics Systems Architect</h3>
+                <div class="job-company">
+                  <span>Twiga Foods</span>
+                  <span class="verified-tag">✓ Verified BRS</span>
+                </div>
+              </div>
+              <div class="job-match-badge match-high">91% Match</div>
+            </div>
+
+            <p class="job-snippet">
+              Build dispatch routing optimization tools, inventory reconciliation systems, and vendor mobile portals for regional fresh-produce supply chains.
+            </p>
+
+            <div class="job-tags">
+              <span class="job-tag">React</span>
+              <span class="job-tag">Node.js</span>
+              <span class="job-tag">Python</span>
+              <span class="job-tag">GIS Routing</span>
+              <span class="job-tag">Redis</span>
+            </div>
+
+            <div class="job-meta-row">
+              <div class="job-meta-item">
+                <span class="job-meta-label">Location:</span>
+                <span class="job-meta-value">Tatu City, Kiambu/Nairobi</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Monthly Gross:</span>
+                <span class="job-meta-value">KES 280,000 – 380,000</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Contract:</span>
+                <span class="job-meta-value">Full-time · Hybrid</span>
+              </div>
+            </div>
+
+            <div class="job-card-footer">
+              <span style="font-size: 0.8125rem; color: var(--text-muted);">Posted 3 days ago · 9 Applicants</span>
+              <button 
+                class="btn btn-primary quick-apply-btn" 
+                data-job="Full-Stack Logistics Systems Architect" 
+                data-company="Twiga Foods"
+                data-score="91%"
+              >
+                1-Click Apply ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Job Card 3: Equity Group -->
+          <div class="job-card" data-county="nairobi">
+            <div class="job-card-header">
+              <div class="company-logo" style="background: #854d0e;">EQT</div>
+              <div style="flex: 1;">
+                <h3 class="job-title">Core Banking Integration Developer</h3>
+                <div class="job-company">
+                  <span>Equity Group Holdings</span>
+                  <span class="verified-tag">✓ Verified BRS</span>
+                </div>
+              </div>
+              <div class="job-match-badge match-mid">86% Match</div>
+            </div>
+
+            <p class="job-snippet">
+              Spearhead Open Banking API initiatives, secure ISO 20022 message parsers, and micro-lending automated underwriting logic.
+            </p>
+
+            <div class="job-tags">
+              <span class="job-tag">Java / Spring</span>
+              <span class="job-tag">Docker</span>
+              <span class="job-tag">Kubernetes</span>
+              <span class="job-tag">Kafka</span>
+              <span class="job-tag">Finacle</span>
+            </div>
+
+            <div class="job-meta-row">
+              <div class="job-meta-item">
+                <span class="job-meta-label">Location:</span>
+                <span class="job-meta-value">Upper Hill, Nairobi</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Monthly Gross:</span>
+                <span class="job-meta-value">KES 350,000 – 500,000</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Contract:</span>
+                <span class="job-meta-value">Full-time · On-site</span>
+              </div>
+            </div>
+
+            <div class="job-card-footer">
+              <span style="font-size: 0.8125rem; color: var(--text-muted);">Posted 5 days ago · 21 Applicants</span>
+              <button 
+                class="btn btn-primary quick-apply-btn" 
+                data-job="Core Banking Integration Developer" 
+                data-company="Equity Group Holdings"
+                data-score="86%"
+              >
+                1-Click Apply ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Job Card 4: Mombasa Maritime -->
+          <div class="job-card" data-county="mombasa">
+            <div class="job-card-header">
+              <div class="company-logo" style="background: #0284c7;">MSA</div>
+              <div style="flex: 1;">
+                <h3 class="job-title">Maritime Logistics Data Analyst</h3>
+                <div class="job-company">
+                  <span>Kilindini Port Logistics Consortium</span>
+                  <span class="verified-tag">✓ Verified BRS</span>
+                </div>
+              </div>
+              <div class="job-match-badge match-mid">82% Match</div>
+            </div>
+
+            <p class="job-snippet">
+              Analyze container turnaround metrics, predictive freight scheduling, and customs clearing pipeline bottlenecks across coastal hubs.
+            </p>
+
+            <div class="job-tags">
+              <span class="job-tag">Python</span>
+              <span class="job-tag">SQL</span>
+              <span class="job-tag">Power BI</span>
+              <span class="job-tag">Supply Chain</span>
+              <span class="job-tag">Customs API</span>
+            </div>
+
+            <div class="job-meta-row">
+              <div class="job-meta-item">
+                <span class="job-meta-label">Location:</span>
+                <span class="job-meta-value">Kizingo, Mombasa</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Monthly Gross:</span>
+                <span class="job-meta-value">KES 190,000 – 260,000</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Contract:</span>
+                <span class="job-meta-value">Full-time · Port Office</span>
+              </div>
+            </div>
+
+            <div class="job-card-footer">
+              <span style="font-size: 0.8125rem; color: var(--text-muted);">Posted 1 week ago · 7 Applicants</span>
+              <button 
+                class="btn btn-primary quick-apply-btn" 
+                data-job="Maritime Logistics Data Analyst" 
+                data-company="Kilindini Port Logistics Consortium"
+                data-score="82%"
+              >
+                1-Click Apply ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Job Card 5: Kisumu AgriTech -->
+          <div class="job-card" data-county="kisumu">
+            <div class="job-card-header">
+              <div class="company-logo" style="background: #eab308; color: #1e293b;">LAK</div>
+              <div style="flex: 1;">
+                <h3 class="job-title">IoT Agronomy Hardware Field Engineer</h3>
+                <div class="job-company">
+                  <span>Lake Region Agro-Innovations</span>
+                  <span class="verified-tag">✓ Verified BRS</span>
+                </div>
+              </div>
+              <div class="job-match-badge match-mid">79% Match</div>
+            </div>
+
+            <p class="job-snippet">
+              Deploy low-power LoRaWAN soil moisture probes, telemetry solar gateways, and farmer SMS alert triggers across Western Kenya sugar and rice belts.
+            </p>
+
+            <div class="job-tags">
+              <span class="job-tag">Embedded C/C++</span>
+              <span class="job-tag">LoRaWAN</span>
+              <span class="job-tag">Python</span>
+              <span class="job-tag">Solar Telemetry</span>
+              <span class="job-tag">USSD Gateway</span>
+            </div>
+
+            <div class="job-meta-row">
+              <div class="job-meta-item">
+                <span class="job-meta-label">Location:</span>
+                <span class="job-meta-value">Kisumu &amp; Lake Basin</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Monthly Gross:</span>
+                <span class="job-meta-value">KES 160,000 – 230,000</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Contract:</span>
+                <span class="job-meta-value">Full-time · Field + Lab</span>
+              </div>
+            </div>
+
+            <div class="job-card-footer">
+              <span style="font-size: 0.8125rem; color: var(--text-muted);">Posted 4 days ago · 5 Applicants</span>
+              <button 
+                class="btn btn-primary quick-apply-btn" 
+                data-job="IoT Agronomy Hardware Field Engineer" 
+                data-company="Lake Region Agro-Innovations"
+                data-score="79%"
+              >
+                1-Click Apply ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Job Card 6: Remote East Africa -->
+          <div class="job-card" data-county="remote">
+            <div class="job-card-header">
+              <div class="company-logo" style="background: #6366f1;">REM</div>
+              <div style="flex: 1;">
+                <h3 class="job-title">Remote Senior React Native Engineer</h3>
+                <div class="job-company">
+                  <span>Pan-African Mobility Solutions</span>
+                  <span class="verified-tag">✓ Verified BRS</span>
+                </div>
+              </div>
+              <div class="job-match-badge match-high">92% Match</div>
+            </div>
+
+            <p class="job-snippet">
+              Deliver low-bandwidth, offline-first mobile applications for transport operators across Kenya, Uganda, Tanzania, and Rwanda.
+            </p>
+
+            <div class="job-tags">
+              <span class="job-tag">React Native</span>
+              <span class="job-tag">TypeScript</span>
+              <span class="job-tag">WatermelonDB</span>
+              <span class="job-tag">Offline-First</span>
+              <span class="job-tag">Bluetooth Thermal</span>
+            </div>
+
+            <div class="job-meta-row">
+              <div class="job-meta-item">
+                <span class="job-meta-label">Location:</span>
+                <span class="job-meta-value">Remote (Kenya Base)</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Monthly Gross:</span>
+                <span class="job-meta-value">KES 300,000 – 420,000</span>
+              </div>
+              <div class="job-meta-item">
+                <span class="job-meta-label">Contract:</span>
+                <span class="job-meta-value">Full-time · 100% Remote</span>
+              </div>
+            </div>
+
+            <div class="job-card-footer">
+              <span style="font-size: 0.8125rem; color: var(--text-muted);">Posted yesterday · 18 Applicants</span>
+              <button 
+                class="btn btn-primary quick-apply-btn" 
+                data-job="Remote Senior React Native Engineer" 
+                data-company="Pan-African Mobility Solutions"
+                data-score="92%"
+              >
+                1-Click Apply ➔
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Client White-Label Callout -->
+    <section class="section section-alt">
+      <div class="container">
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <div style="max-width: 600px;">
+            <div class="badge badge-success" style="margin-bottom: 0.5rem;">Customizable Directory Module</div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem;">
+              Need a Custom Job Board for Your County, Sector, or Alumni?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+              This vacancy search module can be branded with your organization's logo, custom county/sub-county boundaries, M-Pesa premium listing monetization, and automated applicant SMS dispatch.
+            </p>
+          </div>
+          <div>
+            <a href="contact.html" class="btn btn-primary" style="padding: 0.85rem 1.5rem;">
+              Discuss Platform Customization ➔
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">XP</div>
+            <div class="brand-text">
+              <span class="brand-name">X Power Program</span>
+              <span class="brand-sub">Kenya Employment Platform</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A turnkey, client-ready employment and talent matching platform template engineered for workforce initiatives and staffing agencies across Kenya and East Africa.
+          </p>
+          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+            <strong>Developer Contact:</strong> +254 708 746 611<br>
+            <strong>Engineering:</strong> philipmaina637@gmail.com
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="jobs.html" class="footer-link">Find Jobs</a></li>
+            <li><a href="employers.html" class="footer-link">Verified Employers</a></li>
+            <li><a href="match.html" class="footer-link">Skill Diagnostics</a></li>
+            <li><a href="contact.html" class="footer-link">Deploy for Your Agency</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Kenyan Hubs</div>
+          <ul class="footer-links">
+            <li><a href="jobs.html" class="footer-link">Nairobi Tech &amp; FinTech</a></li>
+            <li><a href="jobs.html" class="footer-link">Mombasa Maritime &amp; BI</a></li>
+            <li><a href="jobs.html" class="footer-link">Kisumu AgriTech &amp; Trade</a></li>
+            <li><a href="jobs.html" class="footer-link">Nakuru &amp; Eldoret Innovation</a></li>
+            <li><a href="jobs.html" class="footer-link">Remote East Africa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Compliance &amp; Trust</div>
+          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+            Full statutory alignment with the <strong>Kenya Data Protection Act, 2019</strong>. Strict anti-placement-fee safeguards.
+          </p>
+          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+            Zero-Bloat Architecture
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 X Power Program Kenya. Client Showcase Template.</div>
+        <div class="footer-author">
+          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="components.js"></script>
+</body>
+</html>
