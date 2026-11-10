@@ -45,3 +45,6 @@ next-env.d.ts
 !public/uploads/.gitkeep
 !.env.example
 !.env.production.example
+
+nova-remake/
+
