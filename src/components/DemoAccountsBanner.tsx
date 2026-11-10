@@ -47,10 +47,10 @@ export default function DemoAccountsBanner() {
           <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
           <span className="font-semibold text-white flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            Quick Demo Sandbox:
+            Client Showcase Template:
           </span>
           <span className="text-slate-400 hidden sm:inline">
-            Test any role instantly with pre-loaded Kenyan credentials:
+            Explore Kenyan employment matching from any perspective:
           </span>
         </div>
 
@@ -81,6 +81,15 @@ export default function DemoAccountsBanner() {
             <ShieldCheck className="w-3 h-3" />
             {loading === 'admin' ? 'Switching...' : 'Administrator'}
           </button>
+
+          <a
+            href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20am%20reviewing%20the%20X%20Power%20Platform%20template%20and%20would%20like%20to%20discuss%20deploying%20it."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 border border-cyan-800 transition"
+          >
+            <span>⚡ Deploy Template</span>
+          </a>
 
           <button
             onClick={() => setDismissed(true)}
